@@ -1,0 +1,16 @@
+Transaction ID,Date,Time,Type,Name,Emoji,Category,Amount,Currency,Local amount,Local currency,Notes and #tags,Address,Receipt,Description,Category split,Money Out,Money In
+tx_001,01/01/2026,09:15:00,Card payment,Tesco Superstore,,Groceries,-67.43,GBP,-67.43,GBP,,,,,,67.43,
+tx_002,01/01/2026,12:30:00,Card payment,McDonald's,,Eating out,-8.99,GBP,-8.99,GBP,,,,,,8.99,
+tx_003,02/01/2026,08:00:00,Faster payment,Employer Ltd,,Income,2500.00,GBP,2500.00,GBP,,,,,,,2500.00
+tx_004,02/01/2026,19:45:00,Card payment,Netflix,,Entertainment,-17.99,GBP,-17.99,GBP,,,,,,17.99,
+tx_005,03/01/2026,10:00:00,Card payment,Sainsbury's,,Groceries,-43.21,GBP,-43.21,GBP,,,,,,43.21,
+tx_006,03/01/2026,11:30:00,Card payment,TfL Travel,,Transport,-34.50,GBP,-34.50,GBP,,,,,,34.50,
+tx_007,04/01/2026,14:00:00,Card payment,Amazon,,Shopping,-29.99,GBP,-29.99,GBP,,,,,,29.99,
+tx_008,05/01/2026,09:00:00,Direct debit,Landlord,,Housing,-950.00,GBP,-950.00,GBP,,,,,,950.00,
+tx_009,05/01/2026,17:30:00,Card payment,Gym Membership,,Health,-39.99,GBP,-39.99,GBP,,,,,,39.99,
+tx_010,06/01/2026,13:00:00,Card payment,Pret A Manger,,Eating out,-7.50,GBP,-7.50,GBP,,,,,,7.50,
+tx_011,07/01/2026,16:00:00,Card payment,Spotify,,Entertainment,-11.99,GBP,-11.99,GBP,,,,,,11.99,
+tx_012,08/01/2026,11:00:00,Card payment,Boots,,Health,-23.45,GBP,-23.45,GBP,,,,,,23.45,
+tx_013,09/01/2026,14:30:00,Card payment,Costa Coffee,,Eating out,-4.85,GBP,-4.85,GBP,,,,,,4.85,
+tx_014,10/01/2026,09:00:00,Card payment,Lidl,,Groceries,-38.67,GBP,-38.67,GBP,,,,,,38.67,
+tx_015,11/01/2026,18:00:00,Card payment,Vue Cinema,,Entertainment,-24.00,GBP,-24.00,GBP,,,,,,24.00,

@@ -38,3 +38,6 @@ Thumbs.db
 # Node
 dashboard/node_modules/
 dashboard/dist/
+
+# Idea
+.idea/
