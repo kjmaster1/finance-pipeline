@@ -1,0 +1,40 @@
+# Real bank data - never commit
+data/raw/
+*.csv
+
+# Keep sample data
+!data/sample/*.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Environment variables
+.env
+
+# dbt
+transform/target/
+transform/dbt_packages/
+transform/logs/
+
+# Airflow
+orchestration/logs/
+orchestration/plugins/__pycache__/
+
+# Terraform
+infrastructure/.terraform/
+infrastructure/*.tfstate
+infrastructure/*.tfstate.backup
+infrastructure/.terraform.lock.hcl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+dashboard/node_modules/
+dashboard/dist/
