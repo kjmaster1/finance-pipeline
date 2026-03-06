@@ -1,6 +1,6 @@
 import hashlib
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, List
 
 import pandas as pd
 
@@ -50,7 +50,7 @@ class MonzoParser:
         required_columns = {"Transaction ID", "Date", "Amount", "Name"}
         return required_columns.issubset(set(df.columns))
 
-    def parse(self, df: pd.DataFrame, source_file: str) -> list[RawTransaction]:
+    def parse(self, df: pd.DataFrame, source_file: str) -> List[RawTransaction]:
         transactions = []
         for row_num, row in df.iterrows():
             extra = {}
@@ -91,7 +91,7 @@ class StarlingParser:
         required_columns = {"Date", "Counter Party", "Amount (GBP)"}
         return required_columns.issubset(set(df.columns))
 
-    def parse(self, df: pd.DataFrame, source_file: str) -> list[RawTransaction]:
+    def parse(self, df: pd.DataFrame, source_file: str) -> List[RawTransaction]:
         transactions = []
         for row_num, row in df.iterrows():
             extra = {}
@@ -130,7 +130,7 @@ class HSBCParser:
         required_columns = {"Date", "Description", "Amount"}
         return required_columns.issubset(set(df.columns))
 
-    def parse(self, df: pd.DataFrame, source_file: str) -> list[RawTransaction]:
+    def parse(self, df: pd.DataFrame, source_file: str) -> List[RawTransaction]:
         transactions = []
         for row_num, row in df.iterrows():
             transactions.append(RawTransaction(
@@ -170,7 +170,7 @@ def detect_parser(df: pd.DataFrame):
     )
 
 
-def parse_csv_file(filepath: str) -> list[RawTransaction]:
+def parse_csv_file(filepath: str) -> List[RawTransaction]:
     """
     Main entry point for parsing a bank CSV file.
     Detects the bank format and returns a list of raw transactions.

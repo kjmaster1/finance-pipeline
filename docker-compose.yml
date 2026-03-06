@@ -1,5 +1,6 @@
 x-airflow-common: &airflow-common
   image: apache/airflow:2.8.1
+  user: "${AIRFLOW_UID:-50000}:0"
   environment:
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-postgres/airflow
@@ -14,6 +15,7 @@ x-airflow-common: &airflow-common
     - ./orchestration/dags:/opt/airflow/dags
     - ./orchestration/plugins:/opt/airflow/plugins
     - ./orchestration/logs:/opt/airflow/logs
+    - ./orchestration/requirements.txt:/opt/airflow/requirements.txt
     - ./ingestion:/opt/airflow/ingestion
     - ./data:/opt/airflow/data
   depends_on:

@@ -4,6 +4,7 @@ import re
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from dotenv import load_dotenv
+from typing import Optional
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 
@@ -102,8 +103,8 @@ RECURRING_KEYWORDS = [
 
 def get_connection():
     return psycopg2.connect(
-        host=os.getenv("FINANCE_DB_HOST", "localhost"),
-        port=int(os.getenv("FINANCE_DB_PORT", "5433")),
+        host=os.getenv("FINANCE_DB_HOST", "finance-postgres"),
+        port=int(os.getenv("FINANCE_DB_PORT", "5432")),
         dbname=os.getenv("FINANCE_DB_NAME", "finance"),
         user=os.getenv("FINANCE_DB_USER", "finance"),
         password=os.getenv("FINANCE_DB_PASSWORD", "finance"),
@@ -142,7 +143,7 @@ def parse_amount(raw_amount: str) -> Decimal:
         raise ValueError(f"Cannot parse amount: {raw_amount}")
 
 
-def normalise_category(raw_category: str | None, description: str) -> str:
+def normalise_category(raw_category: Optional[str], description: str) -> str:
     """
     Convert raw bank category to our standard category.
     Falls back to keyword inference if no category provided.
@@ -162,7 +163,7 @@ def normalise_category(raw_category: str | None, description: str) -> str:
     return "Other"
 
 
-def detect_recurring(description: str, raw_category: str | None) -> bool:
+def detect_recurring(description: str, raw_category: Optional[str]) -> bool:
     """
     Detect if a transaction is likely a recurring payment.
     Checks description and category for known recurring patterns.

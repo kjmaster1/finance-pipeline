@@ -7,8 +7,8 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 def get_connection():
     return psycopg2.connect(
-        host=os.getenv("FINANCE_DB_HOST", "localhost"),
-        port=int(os.getenv("FINANCE_DB_PORT", "5433")),
+        host=os.getenv("FINANCE_DB_HOST", "finance-postgres"),
+        port=int(os.getenv("FINANCE_DB_PORT", "5432")),
         dbname=os.getenv("FINANCE_DB_NAME", "finance"),
         user=os.getenv("FINANCE_DB_USER", "finance"),
         password=os.getenv("FINANCE_DB_PASSWORD", "finance"),
